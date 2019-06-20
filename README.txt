@@ -1,1 +1,1 @@
-This is a tracker which takes inputs from a user regarding duration of exercise, calories burned, weight for each day. This project uses OOP.
+This is a code file for a flask based web-app which is a fitness tracker specializing in cardio. It takes inputs from a user regarding duration of exercise, calories burned, weight for each day. This project uses Object Oriented Programming in Python, and utilizes Flask and MySQL to form a web-app with all user functionality.
