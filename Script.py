@@ -65,7 +65,33 @@ class User:
         if self._validation(self.username,self.password):
             self.goal = goal
             return None
+        
+    def set_routine(self,cardio_ex = {}):
+        if self._validation(self.username,self.password):
+            num_ex = int(input("How many cardio exercise do you do in a session? "))
+            self.cardio_ex = cardio_ex
+            count = 0
+            while count < num_ex:
+                data = input("Please state the name of the exercise: ")
+                self.cardio_ex[data] = []
+                count+=1
+            return None
+        
+    def get_routine(self):
+        return self.cardio_ex
     
+    def update(self):
+        update_list =[]
+        for exercise in self.cardio_ex.keys():
+            data_time = int(input("In digits, how many minutes did you do {}: ".format(exercise)))
+            data_calories = int(input("In digits, how many calories did you do burn while doing {}: ".format(exercise)))
+            data_distance = float(input("In digits, what distance did you do cover while doing {}: ".format(exercise)))
+            data_weight = float(input("What weight did you record today: "))
+            update_list.extend([data_time, data_calories, data_distance, data_weight, dt.date(dt.now()).strftime("%d, %b, %Y")])
+            self.cardio_ex[exercise] = update_list
+        return "Today's exercise details have been updated and securely stored"
+
+#BUG : NEW STORED DATA IS REPLACING OLD STORED DATA. HAVE TO BUILD A VERSION THAT FIXES THAT.
  
     
             
