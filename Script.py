@@ -36,4 +36,28 @@ class User:
         User.registered_users[self.username]=self.password
         User.no_of_users +=1
         
- 
+    def _validation(self, username, password):
+        valid = False
+        if self.username in User.registered_users.keys() and self.password == User.registered_users[self.username]:
+            valid = True
+            return valid
+        else:
+            print("Please check your Username/Password and input it correctly")
+            
+    def login(self, username, password):
+        success_login = self._validation(self.username, self.password)
+        if success_login:
+            User.active_users+=1
+            return "{} logged in".format(self.first + " " + self.last)
+        else:
+            return "Login Unsuccesful. Try again"
+        
+    def logout(self):
+        User.active_users-=1
+        return "{} has logged out".format(self.first + " " + self.last)
+    
+
+    
+            
+    
+        
