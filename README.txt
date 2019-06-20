@@ -1,0 +1,1 @@
+This is a tracker which takes inputs from a user regarding duration of exercise, calories burned, weight for each day. This project uses OOP.
