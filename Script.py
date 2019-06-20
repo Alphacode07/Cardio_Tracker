@@ -56,7 +56,17 @@ class User:
         User.active_users-=1
         return "{} has logged out".format(self.first + " " + self.last)
     
-
+    def set_weight(self, weight):
+        if self._validation(self.username,self.password):
+            self.weight = weight
+            return None
+    
+    def set_goal(self, goal):
+        if self._validation(self.username,self.password):
+            self.goal = goal
+            return None
+    
+ 
     
             
     
